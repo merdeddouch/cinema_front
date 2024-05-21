@@ -1,12 +1,10 @@
-import { CardContent } from '@mui/material'
 import React from 'react'
 import EachCity from './EachCity';
 
-const CityList = () => {
-  const citys = ['casa','fes','rabat','kech'];
+const CityList = ({cities}) => {
   return (
-    citys.map((city,index) => {
-      return <EachCity cityName={city} key={index} ></EachCity>
+    cities.map((city,index) => {
+      return <EachCity cityName={city.name} key={index}  ></EachCity>
     })
 
   )
