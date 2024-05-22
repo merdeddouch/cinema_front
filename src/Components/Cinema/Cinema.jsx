@@ -5,6 +5,7 @@ const Cinema = () => {
   const [cinemas,setCinema] = useState([]);
   const [loading,setLoding] = useState(true);
   const [errorFetching,setErrorFetching] = useState([]);
+  const [citysCinema,useCityCinemas] = useState();
 
   useEffect(() => {
     const getCinemas = async () => {
@@ -16,18 +17,15 @@ const Cinema = () => {
           console.log(`errors while feching : ${error}`);
         }
     }
-
     getCinemas();
   }, []);
 
-
-
   return (
-<div>
+        <div>
             <h1>Cinemas</h1>
-            <ul>
+            <ul className="list-group" >
                 {cinemas.map((cinema,index) => (
-                    <li key={index}>{cinema.name}</li>
+                    <li className='list-group-item' key={index}>{cinema.name}</li>
                 ))}
             </ul>
         </div>
