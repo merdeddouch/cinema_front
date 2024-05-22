@@ -20,3 +20,14 @@ export const fetchCities = async () => {
         throw error; 
     }
 };
+
+
+export const fetchCinemasByCity = async (url) => {
+    try {
+        const response = await axios.get(url);
+        return response.data; 
+    } catch (error) {
+        console.error('Error fetching cinemas:', error); 
+        throw error; 
+    }
+};
