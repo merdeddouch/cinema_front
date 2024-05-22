@@ -1,17 +1,37 @@
-import React from 'react'
-import { Stack, Card, Grid, CardHeader, CardContent } from '@mui/material'
-import CityList from '../City/CityList'
+import React, { useState } from 'react'
+import {  Grid } from '@mui/material'
 import Citys from '../City/Citys'
+import CinemaHome from '../Cinema/CinemaHome'
+import {cities_cinema_context} from '../../contex/contexApp'
 
 const Home = () => {
+  const [cinemasInCity,setCinemaInCity] = useState([]);
+  const [cities,setCities] = useState([]);
+  const [loading,setLoading] = useState(true);
+  const [error,setError] = useState([]);
+
   return (
     <Grid container spacing={2} mt={3} px={2}>
+      <cities_cinema_context.Provider value={
+        {
+          cinemasInCity:cinemasInCity,
+          setCinemaInCity:setCinemaInCity,
+          cities:cities,
+          setCities:setCities,
+          loading:loading,
+          setLoading:setLoading,
+          error:error,
+          setError:setError
+        }
+
+      } >
         <Grid item xs={12} md={4}>
           <Citys></Citys>
         </Grid>
         <Grid item xs={12} md={7}>
-          Cinemas
+          <CinemaHome></CinemaHome>
         </Grid>
+        </cities_cinema_context.Provider>
     </Grid>
   )
 }
