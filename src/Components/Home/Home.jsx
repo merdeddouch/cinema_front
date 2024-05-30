@@ -10,6 +10,7 @@ const Home = () => {
   const [loading,setLoading] = useState(true);
   const [error,setError] = useState([]);
   const [currentCityActive,setCurrentCityActive] = useState(0);
+  const [currentCinemaActive,setCurrentCinemaActive] = useState(0);
   return (
     <Grid container spacing={2} mt={3} px={2}>
       <cities_cinema_context.Provider value={
@@ -23,7 +24,9 @@ const Home = () => {
           error:error,
           setError:setError,
           currentCityActive:currentCityActive,
-          setCurrentCityActive:setCurrentCityActive
+          setCurrentCityActive:setCurrentCityActive,
+          currentCinemaActive:currentCinemaActive,
+          setCurrentCinemaActive:setCurrentCinemaActive,
         }
 
       } >
