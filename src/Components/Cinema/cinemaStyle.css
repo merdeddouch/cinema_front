@@ -1,4 +1,7 @@
 .cinemaInCityOption{
     background-color: rgb(61, 155, 155) !important;
-    color: black;
+}
+
+.CinemaActive{
+    background-color: rgb(17, 73, 75) !important;
 }
