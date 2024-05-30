@@ -7,7 +7,7 @@ const ListofCinemaInCity = ({cinemasInCity}) => {
     <Stack direction={"row"} spacing={1} m={2}>
       {
         cinemasInCity.map((cinema,index) =>{
-            return <EachCinema cinema={cinema.name} key={index}></EachCinema>
+            return <EachCinema cinema={cinema.name} key={index} id={index}></EachCinema>
         })
       }
     </Stack>
