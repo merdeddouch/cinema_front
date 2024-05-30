@@ -5,7 +5,7 @@ import { fetchCinemasByCity, fetchCities } from '../../api/api'
 import { cities_cinema_context } from '../../contex/contexApp'
 const Citys = () => {
 
-  const {cities,setCities,error,setError,setLoading,loading,setCinemaInCity,cinemasInCity} = useContext(cities_cinema_context);
+  const {cities,setCities,error,setError,setLoading,loading,setCinemaInCity,cinemasInCity,currentCityActive,setCurrentCityActive} = useContext(cities_cinema_context);
     useEffect(() => {
       const getCities = async () => {
         try {
@@ -32,10 +32,12 @@ const Citys = () => {
       }
     }
 
-  const handClick = (url) =>{
+  const handClick = (url,key) =>{
     getCinemaByCity(url);
+    setCurrentCityActive(key);
+    console.log(key)
   }
-
+  console.log(currentCityActive)
   return (
     <Card>          
         <CardHeader title="City" className='cardHeader' 
@@ -43,7 +45,7 @@ const Citys = () => {
       </CardHeader>
         <CardContent >
                 <Stack>
-                <CityList handleClick={handClick} cities={cities}></CityList>
+                <CityList handleClick={handClick} currentCityActive={currentCityActive} cities={cities}></CityList>
                 </Stack>
       </CardContent>
     </Card>
