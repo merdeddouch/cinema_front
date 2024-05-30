@@ -1,15 +1,13 @@
 import { Button } from '@mui/material'
 import React from 'react'
-
-const EachCity = ({cityName,url_link,handlClick,}) => {
+import './cityListStyle.css'
+const EachCity = ({cityName,url_link,handlClick,id,currentCityActive}) => {
+  
   return (  
     <Button variant='text' 
-    color='primary'
-    sx={{
-        fontSize:"20px",
-        height:"50px",
-    }}
-    onClick={() => handlClick(url_link)}
+    id={id}
+    onClick={() => handlClick(url_link,id)}
+    className={`btn_costum ${id === currentCityActive ? 'ActiveCity' : ''}`}
     >{cityName}</Button>
   )
 }
