@@ -1,11 +1,11 @@
-import React, { useState,useEffect, useContext } from 'react'
-import { Stack, Card, Grid, CardHeader, CardContent } from '@mui/material'
+import React, {useEffect, useContext } from 'react'
+import { Stack, Card, CardHeader, CardContent } from '@mui/material'
 import CityList from '../City/CityList'
 import { fetchCinemasByCity, fetchCities } from '../../api/api'
 import { cities_cinema_context } from '../../contex/contexApp'
 const Citys = () => {
 
-  const {cities,setCities,error,setError,setLoading,loading,setCinemaInCity,cinemasInCity,currentCityActive,setCurrentCityActive,setCurrentCinemaActive} = useContext(cities_cinema_context);
+  const {cities,setCities,error,setError,setLoading,loading,setCinemaInCity,currentCityActive,setCurrentCityActive,setCurrentCinemaActive} = useContext(cities_cinema_context);
     useEffect(() => {
       const getCities = async () => {
         try {
@@ -31,11 +31,15 @@ const Citys = () => {
       }
     }
 
+
+
   const handClick = (url,key) =>{
     getCinemaByCity(url);
     setCurrentCityActive(key);
     setCurrentCinemaActive(0);
   }
+
+  
   return (
     <Card>          
         <CardHeader title="City" className='cardHeader' 
