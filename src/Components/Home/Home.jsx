@@ -11,6 +11,8 @@ const Home = () => {
   const [error,setError] = useState([]);
   const [currentCityActive,setCurrentCityActive] = useState(0);
   const [currentCinemaActive,setCurrentCinemaActive] = useState(0);
+  const [roomsInCinema,setRoomsInCinema] = useState([]);
+
   return (
     <Grid container spacing={2} mt={3} px={2}>
       <cities_cinema_context.Provider value={
@@ -27,6 +29,8 @@ const Home = () => {
           setCurrentCityActive:setCurrentCityActive,
           currentCinemaActive:currentCinemaActive,
           setCurrentCinemaActive:setCurrentCinemaActive,
+          roomsInCinema:roomsInCinema,
+          setRoomsInCinema:setRoomsInCinema,
         }
 
       } >
