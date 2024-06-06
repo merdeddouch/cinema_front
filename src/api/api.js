@@ -42,3 +42,23 @@ export const fetchRoomsInCinema = async (url) => {
         throw error;
     }
 }
+
+export const fetchProjectionsForEachRoom = async (url) => {
+    try {
+        const response = await axios.get(url);
+        return  response.data;
+    } catch (error) {
+        console.error(`error whilr fetching projections ${error}`);
+        throw error;
+    }
+}
+
+export const fetchMovie = async (url) => {
+    try {
+        const response = await axios.get(url);
+        return  response.data;
+    } catch (error) {
+        console.error(`error whilr fetching Movie ${error}`);
+        throw error;
+    }
+}
