@@ -5,10 +5,11 @@ import EachRooms from './EachRooms';
 
 const ListOfRooms = () => {
   const { roomsInCinema } = useContext(cities_cinema_context);
+  
   return (
     <Grid container spacing={1}>
       {roomsInCinema?.map((room, index) => (
-          <EachRooms key={index}  room_name={room.name} />
+          <EachRooms key={index} room_projections={room._links.projections.href}  room_name={room.name} />
       ))}
     </Grid>
   );
