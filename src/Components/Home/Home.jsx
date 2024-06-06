@@ -12,6 +12,7 @@ const Home = () => {
   const [currentCityActive,setCurrentCityActive] = useState(0);
   const [currentCinemaActive,setCurrentCinemaActive] = useState(0);
   const [roomsInCinema,setRoomsInCinema] = useState([]);
+  const [projections,setProjections] = useState([]);
 
   return (
     <Grid container spacing={2} mt={3} px={2}>
@@ -31,6 +32,8 @@ const Home = () => {
           setCurrentCinemaActive:setCurrentCinemaActive,
           roomsInCinema:roomsInCinema,
           setRoomsInCinema:setRoomsInCinema,
+          projections:projections,
+          setProjections:setProjections
         }
 
       } >
